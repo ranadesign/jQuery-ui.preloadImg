@@ -1,4 +1,4 @@
-#&quot;jQuery.ui.preloadImg&quot; widget
+#&quot;jQuery-ui.preloadImg&quot; widget
 
 ##Description
 DOM内の特定の位置にある画像、もしくは特定のパスの画像をプリロードして、コールバックを返すだけのスクリプト。要jQuery UI widget
@@ -8,15 +8,18 @@ DOM内の特定の位置にある画像、もしくは特定のパスの画像�
 ###jQuery (Developed on 1.7.1)
 http://jquery.com/
 
+###jQuery UI (Developed on 1.8.18)
+http://jqueryui.com/
+
 ---
 ##Demos
-http://ranadesign.github.com/jquery-preloadimg
+http://ranadesign.github.com/jQuery-ui.preloadImg/
 
 ---
 ##Usage
 
 ###Step01
-head要素内で jquery.js、jquery-ui.js (要widgetモジュール), jquery.ui.preloadimg.jsを順番に読み込みます。
+head要素内で jquery.js、jquery-ui.js (要widgetモジュール), jquery-ui.preloadimg.jsを順番に読み込みます。
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
