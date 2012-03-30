@@ -51,9 +51,9 @@ $.widget('ui.preloadImg', {
 			}).appendTo(self.element);
 			imgHolder.push(img[0]);
 		});
-		this._checkLoaded(imgHolder);
+		this._checkLoaded(imgHolder, true);
 	},
-	_checkLoaded: function (imgHolder) {
+	_checkLoaded: function (imgHolder, resetDOM) {
 		var self = this;
 		var checked = [];
 		$.each(imgHolder, function (i, img) {
@@ -63,11 +63,13 @@ $.widget('ui.preloadImg', {
 		});
 		if (imgHolder.length === checked.length) {
 			clearTimeout(this.timer);
-			this._resetImgStyle(imgHolder);
+			if (resetDOM) {
+				this._resetImgStyle(imgHolder);
+			}
 			this.options.complete(imgHolder);
 		} else {
 			setTimeout(function () {
-				self._checkLoaded(imgHolder);
+				self._checkLoaded(imgHolder, resetDOM);
 			}, this.options.interval);
 		}
 	},
@@ -75,7 +77,7 @@ $.widget('ui.preloadImg', {
 		$.each(imgHolder, function (i, img) {
 			$(img).css({
 				'position': '', 'visibility': '', 'width': '', 'height': ''
-			});
+			}).remove();
 		});
 	}
 	
